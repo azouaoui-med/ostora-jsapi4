@@ -1,0 +1,42 @@
+@import 'mixins';
+@import '../app/header/header';
+@import '../app/widgets/widgetContainer';
+body {
+    overflow: hidden;
+}
+
+#main {
+    width: 100vw;
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+    overflow: hidden;
+    position: relative;
+    #viewDiv {
+        width: 100%;
+        height: 100%;
+    }
+}
+#footer {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.form-control,
+.btn,
+.input-group-text {
+    @include border-radius(0);
+}
+
+.basemapContainer{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    max-height: calc(100% - 30px);
+    transition: right .5s;
+    &.hidden{
+        right: -250px;
+    }
+}
+
