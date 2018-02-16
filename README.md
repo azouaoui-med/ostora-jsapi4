@@ -4,6 +4,8 @@ Ostora is a responsive template for building web mapping applications. This vers
 ## Demo
 [Live preview](https://azouaoui-med.github.io/ostora-jsapi4/)
 
+![Screenshot](https://user-images.githubusercontent.com/25878302/36319308-c8e40446-1342-11e8-9639-4be1d8c1539f.PNG)
+
 ## Features
 *   Fully responsive
 *   Based on Bootstrap 4
