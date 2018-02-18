@@ -23,7 +23,7 @@
         min-width: 0;
     }
     .widgetHeader {
-        display: flex;
+        @include flexBox();
         background: #292e33;
         align-items: center;
         height: 35px;
@@ -87,7 +87,7 @@
         width: 40px !important;
         min-height: 0px;
         min-width: 0px;
-        transition: all .4s;      
+        @include transition(all .4s);    
     }
 }
 

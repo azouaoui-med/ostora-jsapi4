@@ -16,6 +16,7 @@ body {
         height: 100%;
     }
 }
+
 #footer {
     position: fixed;
     z-index: 9999;
@@ -23,20 +24,20 @@ body {
     bottom: 0;
     left: 0;
 }
+
 .form-control,
 .btn,
 .input-group-text {
     @include border-radius(0);
 }
 
-.basemapContainer{
+.basemapContainer {
     position: absolute;
     top: 15px;
     right: 15px;
     max-height: calc(100% - 30px);
-    transition: right .5s;
-    &.hidden{
+    @include transition(right .5s);
+    &.hidden {
         right: -250px;
     }
 }
-
