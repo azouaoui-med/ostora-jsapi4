@@ -1,7 +1,7 @@
 # Ostora
 Ostora is a responsive template for building web mapping applications. This version is built with [Arcgis api for javascript 4.x](https://developers.arcgis.com/javascript/)
 
-See also the [Openlayers](http://openlayers.org/) and [Requirejs](http://requirejs.org/) version
+See also the [Openlayers and Requirejs](https://github.com/azouaoui-med/ostora-ol-reqjs) version
 
 ## Demo
 [Live preview](https://azouaoui-med.github.io/ostora-jsapi4/)
