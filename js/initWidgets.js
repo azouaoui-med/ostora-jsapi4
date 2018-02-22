@@ -7,15 +7,16 @@ define([
     return {
         startup: function (view) {
 
-            require(["app/header/header", "app/widgets/widgetContainer"], function (header, widgetContainer) {
-
+            require(["app/header/header", "app/widgets/widget"], function (header, widgetContainer) {
+                //Create header (navbar) and append it to <header id="header"></header> 
                 var headerWidget = new header();
                 headerWidget.mapView = view;               
                 var headerNode = $(headerWidget.domNode);
                 $('#header').append(headerNode);
                 headerWidget.startup();
-  
+                //Loop throw the widgetConfig file and create the widgets with the associated link
                 for (let i = 0; i < widgetConfig.menus.length; i++) {
+                    
                     if (widgetConfig.menus[i].type == 'simple') {
                         require([widgetConfig.menus[i].widget.path], function (widget) {
 
@@ -43,7 +44,7 @@ define([
                                 if (widgetContainerCons.minimizedWidget) {
                                     widgetContainerCons.restoreWidget();
                                 }
-                                $('.widgetContainer').css('z-index', 40);
+                                $('.widget').css('z-index', 40);
                                 $(widgetContainerCons.domNode).css('z-index', 50);
                             });
                             widgetCons.mapView = view;

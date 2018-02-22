@@ -7,7 +7,7 @@
   .basemapGallery a {
     height: 32px; }
 
-.widgetContainer {
+.widget {
   background: #444b52;
   color: #c2c8ce;
   position: absolute;
@@ -22,7 +22,7 @@
   border-top: none;
   display: none; }
   @media screen and (max-width: 767px) {
-    .widgetContainer {
+    .widget {
       top: 0 !important;
       bottom: 0 !important;
       left: 0 !important;
@@ -31,13 +31,17 @@
       height: 100% !important;
       min-height: 0;
       min-width: 0; } }
-  .widgetContainer .widgetHeader {
+  .widget .widgetHeader {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     background: #292e33;
     align-items: center;
     height: 35px;
     cursor: move; }
-    .widgetContainer .widgetHeader .widgetTitle {
+    .widget .widgetHeader .widgetTitle {
       flex-grow: 1;
       padding: 0 10px;
       align-items: center;
@@ -47,11 +51,11 @@
       overflow: hidden;
       display: inline-block;
       color: #94979b; }
-      .widgetContainer .widgetHeader .widgetTitle div {
+      .widget .widgetHeader .widgetTitle div {
         display: inline-block; }
-      .widgetContainer .widgetHeader .widgetTitle i {
+      .widget .widgetHeader .widgetTitle i {
         margin-right: 10px; }
-    .widgetContainer .widgetHeader a {
+    .widget .widgetHeader a {
       color: #94979b;
       border-left: 1px solid #474b4e;
       text-align: center;
@@ -63,25 +67,25 @@
       -ms-transition: color 0.2s ease;
       -o-transition: color 0.2s ease;
       transition: color 0.2s ease; }
-      .widgetContainer .widgetHeader a:hover {
+      .widget .widgetHeader a:hover {
         color: #c0c2c5; }
       @media screen and (max-width: 767px) {
-        .widgetContainer .widgetHeader a.widgetMaximize {
+        .widget .widgetHeader a.widgetMaximize {
           display: none; } }
-  .widgetContainer .widgetBody {
+  .widget .widgetBody {
     padding: 10px 0;
     height: calc(100% - 35px);
     overflow: auto; }
-    .widgetContainer .widgetBody hr {
+    .widget .widgetBody hr {
       border-top: 1px solid #4a5158; }
-  .widgetContainer.maximized {
+  .widget.maximized {
     top: 0 !important;
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
     height: 100% !important; }
-  .widgetContainer.minimized {
+  .widget.minimized {
     opacity: 0 !important;
     left: 0 !important;
     top: 100% !important;
@@ -89,9 +93,11 @@
     width: 40px !important;
     min-height: 0px;
     min-width: 0px;
-    transition: all .4s; }
-    .widgetContainer.minimized .widgetContent {
-      overflow: hidden; }
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
 
 .minimizedWidgets .minimizedWidget {
   display: inline-block;
@@ -156,7 +162,11 @@ body {
   top: 15px;
   right: 15px;
   max-height: calc(100% - 30px);
-  transition: right .5s; }
+  -webkit-transition: right 0.5s;
+  -moz-transition: right 0.5s;
+  -ms-transition: right 0.5s;
+  -o-transition: right 0.5s;
+  transition: right 0.5s; }
   .basemapContainer.hidden {
     right: -250px; }
 

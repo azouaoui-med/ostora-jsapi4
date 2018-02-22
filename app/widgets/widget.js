@@ -3,7 +3,7 @@ define([
         "dijit/_WidgetBase",
         "dijit/_TemplatedMixin",
         "dijit/_WidgetsInTemplateMixin",
-        "dojo/text!app/widgets/widgetContainer.html",
+        "dojo/text!app/widgets/widget.html",
 
     ],
     function (
@@ -22,7 +22,7 @@ define([
 
                 widgetNode.find('.widgetMaximize').click(function () {
 
-                    widgetNode.closest('.widgetContainer').toggleClass('maximized');
+                    widgetNode.closest('.widget').toggleClass('maximized');
                     $(this).find("i").toggleClass("fa-window-restore");
 
                 });
@@ -56,7 +56,7 @@ define([
                 }, this));
 
                 widgetNode.mousedown(function () {
-                    $('.widgetContainer').css('z-index', 40);
+                    $('.widget').css('z-index', 40);
                     widgetNode.css('z-index', 50);
                 });
 
@@ -77,7 +77,7 @@ define([
 
             },
             restoreWidget: function () {
-                $('.widgetContainer').css('z-index', 40);
+                $('.widget').css('z-index', 40);
                 $(this.domNode).css('z-index', 50);
                 $(this.domNode).removeClass('minimized');
                 this.minimizedWidget.remove();
