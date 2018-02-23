@@ -1,18 +1,17 @@
 define([
     "esri/views/MapView",
+    "esri/views/SceneView",
     "esri/Map",
     "esri/widgets/BasemapGallery",
-    "esri/widgets/ScaleBar",
     "esri/widgets/Fullscreen",
     "js/initWidgets",
     "dojo/domReady!"
-], function (MapView, Map, BasemapGallery, ScaleBar, Fullscreen, initWidgets) {
+], function (MapView, SceneView, Map, BasemapGallery, Fullscreen, initWidgets) {
 
     return {
-        mapView: null,
         startup: function () {
             this.initMap();
-            initWidgets.startup(this.mapView);
+            initWidgets.startup(this.activeView);
         },
         initMap: function () {
 
@@ -23,7 +22,8 @@ define([
             this.mapView = new MapView({
                 container: "viewDiv", // Reference to the scene div created in step 5
                 map: new Map({
-                    basemap: 'streets'
+                    basemap: 'streets',
+                    ground: "world-elevation"
                 }), // Reference to the map object created before the scene
                 zoom: 6, // Sets zoom level based on level of detail (LOD)
                 center: [3.262939, 36.618283], // Sets center point of view using longitude,latitude
@@ -31,24 +31,21 @@ define([
                     components: ["zoom", "compass", "attribution"]
                 }
             });
+            this.activeView = this.mapView;
 
             var basemapContainer = document.createElement("div");
             $(basemapContainer).addClass("basemapContainer hidden").appendTo("#main");
             //Basemap gallery
             var basemapGallery = new BasemapGallery({
-                view: this.mapView,
+                view:  this.activeView,
                 container: basemapContainer
             });
-            //scalebar widget
-            var scaleBar = new ScaleBar({
-                view: this.mapView
-            });
-            this.mapView.ui.add(scaleBar, "bottom-right");
+
             // full screen widget
             fullscreen = new Fullscreen({
-                view: this.mapView
+                view:  this.activeView
             });
-            this.mapView.ui.add(fullscreen, "top-right");
+            this.activeView.ui.add(fullscreen, "top-right");
 
 
 

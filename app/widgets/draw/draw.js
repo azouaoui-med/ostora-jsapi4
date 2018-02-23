@@ -33,12 +33,11 @@ define([
 
 
                 var tempGraphicsLayer = new GraphicsLayer();
-                var view = this.mapView;
-                this.mapView.map.add(tempGraphicsLayer);
-                this.mapView.when(function () {
+                this.activeView.map.add(tempGraphicsLayer);
+                this.activeView.when($.proxy(function (e) {
 
                     var sketchViewModel = new SketchViewModel({
-                        view: view,
+                        view: this.activeView,
                         layer: tempGraphicsLayer,
                         pointSymbol: {
                             type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
@@ -104,7 +103,7 @@ define([
                     }, this));
 
 
-                })
+                }, this));
 
 
 

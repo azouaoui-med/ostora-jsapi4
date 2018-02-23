@@ -7,30 +7,30 @@ define([
     return {
         startup: function (view) {
 
-            require(["app/header/header", "app/widgets/widget"], function (header, widgetContainer) {
+            require(["app/header/header", "app/widgets/widget"], function (Header, Widget) {
                 //Create header (navbar) and append it to <header id="header"></header> 
-                var headerWidget = new header();
-                headerWidget.mapView = view;               
-                var headerNode = $(headerWidget.domNode);
+                var header = new Header();
+                header.activeView = view;               
+                var headerNode = $(header.domNode);
                 $('#header').append(headerNode);
-                headerWidget.startup();
+                header.startup();
                 //Loop throw the widgetConfig file and create the widgets with the associated link
                 for (let i = 0; i < widgetConfig.menus.length; i++) {
                     
                     if (widgetConfig.menus[i].type == 'simple') {
-                        require([widgetConfig.menus[i].widget.path], function (widget) {
+                        require([widgetConfig.menus[i].widget.path], function (WidgetContent) {
 
-                            var widgetContainerCons = new widgetContainer();
-                            var widgetContainerNode = $(widgetContainerCons.domNode);
-                            widgetContainerNode.find('.widgetTitle .widgetIcon')[0].innerHTML = widgetConfig.menus[i].widget.icon;
-                            widgetContainerNode.find('.widgetTitle .widgetText')[0].innerHTML = widgetConfig.menus[i].widget.title;
+                            var widget = new Widget();
+                            var widgetNode = $(widget.domNode);
+                            widgetNode.find('.widgetTitle .widgetIcon')[0].innerHTML = widgetConfig.menus[i].widget.icon;
+                            widgetNode.find('.widgetTitle .widgetText')[0].innerHTML = widgetConfig.menus[i].widget.title;
 
-                            var widgetCons = new widget();
-                            var widgetNode = $(widgetCons.domNode);
+                            var widgetContent = new WidgetContent();
+                            var widgetContentNode = $(widgetContent.domNode);
 
-                            widgetContainerNode.find('.widgetBody').append(widgetNode);
+                            widgetNode.find('.widgetBody').append(widgetContentNode);
 
-                            $('#main').append(widgetContainerNode);
+                            $('#main').append(widgetNode);
 
                             var menu = $('<li/>', {
                                 class: 'nav-item',
@@ -40,16 +40,16 @@ define([
 
                             menu.click(function (e) {
                                 e.preventDefault();
-                                $(widgetContainerCons.domNode).show();
-                                if (widgetContainerCons.minimizedWidget) {
-                                    widgetContainerCons.restoreWidget();
+                                $(widget.domNode).show();
+                                if (widget.minimizedWidget) {
+                                    widget.restoreWidget();
                                 }
                                 $('.widget').css('z-index', 40);
-                                $(widgetContainerCons.domNode).css('z-index', 50);
+                                $(widget.domNode).css('z-index', 50);
                             });
-                            widgetCons.mapView = view;
-                            widgetCons.startup();
-                            widgetContainerCons.startup();
+                            widgetContent.activeView = view;
+                            widgetContent.startup();
+                            widget.startup();
                         });
 
                     }

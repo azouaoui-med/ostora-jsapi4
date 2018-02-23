@@ -2,10 +2,13 @@
   margin-right: 8px;
   font-size: 14px; }
 
-.basemapGallery {
-  margin-left: 5px; }
-  .basemapGallery a {
-    height: 32px; }
+.searchGeo {
+  margin-right: 5px; }
+
+.custom-btn a {
+  height: 32px; }
+  .custom-btn a:last-child {
+    margin-right: none; }
 
 .widget {
   background: #444b52;

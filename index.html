@@ -21,6 +21,9 @@
                 app: location.pathname.replace(/\/[^/]+$/, "") + "/app",
                 js: location.pathname.replace(/\/[^/]+$/, "") + "/js",
                 config: location.pathname.replace(/\/[^/]+$/, "") + "/js/config"
+            },
+            has: {
+                "esri-promise-compatibility": 1 // enable native promises and remove the warning about using when() instead of then(). https://developers.arcgis.com/javascript/latest/guide/release-notes/index.html#improved-compatibility-with-javascript-promises
             }
         };
     </script>

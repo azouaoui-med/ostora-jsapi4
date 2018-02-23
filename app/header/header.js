@@ -5,6 +5,7 @@ define([
         "dijit/_WidgetsInTemplateMixin",
         "dojo/text!app/header/header.html",
         "esri/widgets/Search",
+        "esri/views/SceneView",
         "dojo/domReady!"
 
     ],
@@ -14,7 +15,8 @@ define([
         _TemplatedMixin,
         _WidgetsInTemplateMixin,
         template,
-        Search
+        Search,
+        SceneView
     ) {
         return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
             templateString: template,
@@ -24,7 +26,7 @@ define([
                 $(this.domNode).find('.searchGeo').append(search);
 
                 var searchWidget = new Search({
-                    view: this.mapView,
+                    view: this.activeView,
                     container: search
                 });
                 $(this.domNode).find('#toggleBaseGallery').click(function (e) {
@@ -33,6 +35,37 @@ define([
                     $(".basemapContainer").toggleClass("hidden");
 
                 });
+
+                this.mapView = this.activeView;
+                this.map = this.activeView.map;
+                this.sceneView = new SceneView({
+                    map: this.map
+                });
+
+                $(this.domNode).find('#toggle3d').click($.proxy(function (e) {
+                    e.preventDefault();
+                    var container = this.activeView.container;
+                    this.activeView.container = null;
+                    var viewpoint = this.activeView.viewpoint.clone();
+                    if (this.activeView == this.mapView) {
+                        //switch to 3d
+
+                        this.sceneView.viewpoint = viewpoint;
+                        this.sceneView.container = container;
+                        this.activeView = this.sceneView;
+                        $(this.domNode).find('#toggle3d').html('2D');
+
+                    } else {
+                        //switch to 2d
+                        this.mapView.viewpoint = viewpoint;
+                        this.mapView.container = container;
+                        this.activeView = this.mapView;
+                        $(this.domNode).find('#toggle3d').html('3D');
+                    }
+
+                }, this));
+
+
 
             }
         });
