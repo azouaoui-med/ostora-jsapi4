@@ -1,8 +1,9 @@
 define([
     "require",
     "config/widgetConfig",
+    "js/loader",
     "dojo/domReady!"
-], function (require, widgetConfig) {
+], function (require, widgetConfig, loader) {
 
     return {
         startup: function (view) {
@@ -10,13 +11,13 @@ define([
             require(["app/header/header", "app/widgets/widget"], function (Header, Widget) {
                 //Create header (navbar) and append it to <header id="header"></header> 
                 var header = new Header();
-                header.activeView = view;               
+                header.activeView = view;
                 var headerNode = $(header.domNode);
                 $('#header').append(headerNode);
                 header.startup();
                 //Loop throw the widgetConfig file and create the widgets with the associated link
                 for (let i = 0; i < widgetConfig.menus.length; i++) {
-                    
+
                     if (widgetConfig.menus[i].type == 'simple') {
                         require([widgetConfig.menus[i].widget.path], function (WidgetContent) {
 
@@ -50,6 +51,13 @@ define([
                             widgetContent.activeView = view;
                             widgetContent.startup();
                             widget.startup();
+
+                            if (i >= (widgetConfig.menus.length - 1)) {
+                                loader.appLoaded = true
+                                if (loader.windowLoaded) {
+                                    loader.remove();
+                                }
+                            }
                         });
 
                     }

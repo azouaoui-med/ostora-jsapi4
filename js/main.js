@@ -4,9 +4,10 @@ define([
     "esri/Map",
     "esri/widgets/BasemapGallery",
     "esri/widgets/Fullscreen",
-    "js/initWidgets",
+    "js/initWidgets",    
+    "js/loader",
     "dojo/domReady!"
-], function (MapView, SceneView, Map, BasemapGallery, Fullscreen, initWidgets) {
+], function (MapView, SceneView, Map, BasemapGallery, Fullscreen, initWidgets,loader) {
 
     return {
         startup: function () {
@@ -47,6 +48,12 @@ define([
             });
             this.activeView.ui.add(fullscreen, "top-right");
 
+            $(window).on('load', function () {
+                loader.windowLoaded = true;
+                if (loader.appLoaded) {
+                    loader.remove();
+                }
+            });
 
 
         }

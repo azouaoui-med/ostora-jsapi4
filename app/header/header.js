@@ -24,8 +24,7 @@ define([
 
                 var search = document.createElement("div");
                 $(this.domNode).find('.searchGeo').append(search);
-
-                var searchWidget = new Search({
+                this.searchWidget = new Search({
                     view: this.activeView,
                     container: search
                 });
@@ -49,18 +48,21 @@ define([
                     var viewpoint = this.activeView.viewpoint.clone();
                     if (this.activeView == this.mapView) {
                         //switch to 3d
-
                         this.sceneView.viewpoint = viewpoint;
                         this.sceneView.container = container;
                         this.activeView = this.sceneView;
+                        this.searchWidget.view = this.activeView;
                         $(this.domNode).find('#toggle3d').html('2D');
+
 
                     } else {
                         //switch to 2d
                         this.mapView.viewpoint = viewpoint;
                         this.mapView.container = container;
                         this.activeView = this.mapView;
+                        this.searchWidget.view = this.activeView;
                         $(this.domNode).find('#toggle3d').html('3D');
+
                     }
 
                 }, this));
