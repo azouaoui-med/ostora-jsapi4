@@ -32,7 +32,9 @@ define([
             startup: function () {
 
 
-                var tempGraphicsLayer = new GraphicsLayer();
+                var tempGraphicsLayer = new GraphicsLayer({
+                    title:"Graphic layer"
+                });
                 this.activeView.map.add(tempGraphicsLayer);
                 this.activeView.when($.proxy(function (e) {
 

@@ -5,13 +5,15 @@ define([
     "esri/widgets/BasemapGallery",
     "esri/widgets/Fullscreen",
     "js/initWidgets",    
-    "js/loader",
+    "js/loader",    
+    "config/layerConfig",
     "dojo/domReady!"
-], function (MapView, SceneView, Map, BasemapGallery, Fullscreen, initWidgets,loader) {
+], function (MapView, SceneView, Map, BasemapGallery, Fullscreen, initWidgets,loader,layerConfig) {
 
     return {
         startup: function () {
             this.initMap();
+            this.initLayer();
             initWidgets.startup(this.activeView);
         },
         initMap: function () {
@@ -34,14 +36,6 @@ define([
             });
             this.activeView = this.mapView;
 
-            var basemapContainer = document.createElement("div");
-            $(basemapContainer).addClass("basemapContainer hidden").appendTo("#main");
-            //Basemap gallery
-            var basemapGallery = new BasemapGallery({
-                view:  this.activeView,
-                container: basemapContainer
-            });
-
             // full screen widget
             fullscreen = new Fullscreen({
                 view:  this.activeView
@@ -56,7 +50,15 @@ define([
             });
 
 
-        }
+        },
+        initLayer: function () {
+
+            var layers = layerConfig.layers
+            for (let i = 0; i < layers.length; i++) {
+                this.mapView.map.add(layers[i]);
+
+            }
+        },
     }
 
 

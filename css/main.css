@@ -72,6 +72,48 @@
   .custom-btn a:last-child {
     margin-right: none; }
 
+aside.sideBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  width: 300px;
+  transition: right .5s;
+  height: 100%;
+  box-shadow: -1px 1px 4px rgba(51, 54, 63, 0.3);
+  z-index: 100; }
+  @media (max-width: 400px) {
+    aside.sideBar {
+      width: 100%; } }
+  aside.sideBar.hidden {
+    right: -300px; }
+    @media (max-width: 400px) {
+      aside.sideBar.hidden {
+        right: -100%; } }
+  aside.sideBar .nav-tabs .nav-link {
+    border-radius: 0; }
+  aside.sideBar .tab-content {
+    height: calc(100% - 42px);
+    overflow: auto; }
+    aside.sideBar .tab-content #guide {
+      padding: 20px 5px; }
+      aside.sideBar .tab-content #guide li {
+        font-size: 14px;
+        margin-bottom: 5px; }
+
+.rightToLeft aside.sideBar {
+  right: auto;
+  left: 0;
+  transition: left .5s; }
+  .rightToLeft aside.sideBar.hidden {
+    left: -300px;
+    right: auto; }
+    @media (max-width: 400px) {
+      .rightToLeft aside.sideBar.hidden {
+        left: -100%;
+        right: auto; } }
+
 .widget {
   background: #444b52;
   color: #c2c8ce;

@@ -31,7 +31,7 @@ define([
                 $(this.domNode).find('#toggleBaseGallery').click(function (e) {
                     e.preventDefault();
 
-                    $(".basemapContainer").toggleClass("hidden");
+                    $(".sideBar").toggleClass("hidden");
 
                 });
 

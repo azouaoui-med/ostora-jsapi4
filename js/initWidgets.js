@@ -8,13 +8,19 @@ define([
     return {
         startup: function (view) {
 
-            require(["app/header/header", "app/widgets/widget"], function (Header, Widget) {
+            require(["app/header/header","app/aside/aside", "app/widgets/widget"], function (Header,aside, Widget) {
                 //Create header (navbar) and append it to <header id="header"></header> 
                 var header = new Header();
                 header.activeView = view;
                 var headerNode = $(header.domNode);
                 $('#header').append(headerNode);
                 header.startup();
+                //Create aside widget and append it to #main
+                var asideWidget = new aside();
+                asideWidget.mapView = view;
+                var asideNode = $(asideWidget.domNode);
+                $('#main').append(asideNode);
+                asideWidget.startup();
                 //Loop throw the widgetConfig file and create the widgets with the associated link
                 for (let i = 0; i < widgetConfig.menus.length; i++) {
 
