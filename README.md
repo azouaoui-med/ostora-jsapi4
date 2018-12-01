@@ -8,6 +8,8 @@ You can find a version built with [Openlayers](http://openlayers.org/) -- [here]
 ## Demo
 [Live preview](https://azouaoui-med.github.io/ostora-jsapi4/src/)
 
+## ScreenShots
+
 Desktop
 
 ![Screenshot](https://user-images.githubusercontent.com/25878302/49329863-08fcad00-f586-11e8-9e2d-f6fa1f124d59.png)
@@ -31,7 +33,9 @@ Server runs on http://localhost:3000
 *   Draggable and Resizable widgets
 *   Easy to customize
 *   Configurable
-*   Support languages (English - عربي)
+*   Internationalization 
+    *    عربي
+    *   English
 
 ## Included examples
 *   Search
@@ -46,7 +50,7 @@ Server runs on http://localhost:3000
 *   [JQuery](http://jquery.com/)
 *   [Bootstrap 4](https://getbootstrap.com/)
 *   [JQuery ui](http://jqueryui.com)
-*   [jQuery custom content scroller](http://manos.malihu.gr/jquery-custom-content-scroller/)
+*   [Malihu custom scrollbar plugin](http://manos.malihu.gr/jquery-custom-content-scroller/)
 *   [Font awesome](https://fontawesome.com/)
 *   [Themify Icons ](https://themify.me/themify-icons)
 
