@@ -1,0 +1,68 @@
+aside.sideBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    width: 300px;
+    transition: right .5s;
+    height: 100%;
+    box-shadow: -1px 1px 4px rgba(51, 54, 63, 0.3);
+    z-index: 100;
+    @media (max-width: 400px) {
+        width: 100%;
+    }
+    &.hidden {
+        right: -300px;
+        @media (max-width: 400px) {
+            right: -100%;
+        }
+    }
+    .nav-tabs .nav-link {
+        border-radius: 0;
+    }
+    .tab-content {
+        height: calc(100% - 42px);
+        overflow: auto;        
+        #guide {
+            li {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+        }
+        .tab-content-title{
+            font-size: .9rem;
+            padding: 10px;
+            border-bottom: 1px solid #f8f9fa;
+            margin-bottom: 5px;
+        }
+        .legend{
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .esri-coordinate-conversion{
+            width: 100%;
+        }
+    }
+}
+
+.rightToLeft {
+    aside.sideBar {
+        right: auto;
+        left: 0;
+        transition: left .5s;
+        &.hidden {
+            left: -300px;
+            right: auto;
+            @media (max-width: 400px) {
+                left: -100%;
+                right: auto;
+            }
+        }
+
+        .tab-content-title{
+            text-align: right;
+        }
+    }
+}

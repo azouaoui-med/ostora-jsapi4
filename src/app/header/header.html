@@ -1,0 +1,148 @@
+<div>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <i class="fa fa-globe"></i>
+      <span>${i18n.logoName}</span>
+    </a>
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ${i18n.mr_ml}-auto" id="menuList">
+        <!-- widget menu will be placed here-->
+      </ul>
+
+    </div>
+    <ul class="navbar-nav mr-auto" id="rightMenu">
+      <li class="nav-item ">
+
+        <a href="#" class="nav-link" id="fullScreen" title="">
+          <i class="ti ti-fullscreen"></i>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-pill badge-warning">5</span>
+        </a>
+        <div class="dropdown-menu notification-panel" aria-labelledby="navbarDropdown">
+          <div class="notification-header">${i18n.notification}</div>
+          <div class="notification-body">
+            <ul>
+              <li>
+                <div class="notif-icon">
+                  <i class="ti ti-info text-info border border-info"></i>
+                </div>
+                <div class="notif-content">
+                  <div class="notif-title">${i18n.notification_title}</div>
+                  <div class="notif-details">${i18n.notificationTitle} </div>
+                  <div class="notif-date">6 minuts ago</div>
+                </div>
+              </li>
+              <li>
+                <div class="notif-icon">
+                  <i class="ti ti-check text-success border border-success"></i>
+                </div>
+                <div class="notif-content">
+                  <div class="notif-title">${i18n.notification_title}</div>
+                  <div class="notif-details">${i18n.notificationTitle} </div>
+                  <div class="notif-date">6 minuts ago</div>
+                </div>
+              </li>
+              <li>
+                <div class="notif-icon">
+                  <i class="ti ti-alert text-warning border border-warning"></i>
+                </div>
+                <div class="notif-content">
+                  <div class="notif-title">${i18n.notification_title}</div>
+                  <div class="notif-details">${i18n.notificationTitle} </div>
+                  <div class="notif-date">6 minuts ago</div>
+                </div>
+              </li>
+              <li>
+                <div class="notif-icon">
+                  <i class="ti ti-close text-danger border border-danger"></i>
+                </div>
+                <div class="notif-content">
+                  <div class="notif-title">${i18n.notification_title}</div>
+                  <div class="notif-details">${i18n.notificationTitle} </div>
+                  <div class="notif-date">6 minuts ago</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="notification-footer">
+            <a href="#">${i18n.viewAllNotification}</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="ti ti-user"></i>
+        </a>
+        <div class="dropdown-menu user-panel" aria-labelledby="navbarDropdown">
+          <div class="user-profile">
+            <div class="img-user">
+              <div class="img-container">
+                <img src="img/userPic.png" alt="user picture">
+              </div>
+
+            </div>
+            <div class="user-details">
+              <div class="user-name">${i18n.userName}</div>
+              <div class="user-role">${i18n.userRole}</div>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" id="changeLanguage" ${i18n.datalanguage}>
+            <i class="fa fa-language"></i>
+            <span>${i18n.language}</span>
+          </a>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#helpModal">
+            <i class="ti ti-help-alt"></i>
+            <span>${i18n.help}</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/logout">
+            <i class="fa fa-power-off"></i>
+            <span>${i18n.logout}</span>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item ">
+
+        <a href="#" class="nav-link" id="toggleBaseGallery" title="Toggle side bar">
+          <i class="ti ti-layout-sidebar-right"></i>
+        </a>
+
+      </li>
+    </ul>
+
+  </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="helpModalLabel">${i18n.help}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            ${i18n.helpContent}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">${i18n.close}</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

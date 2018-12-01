@@ -1,0 +1,770 @@
+@-webkit-keyframes load-bar-an {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 2em; }
+  40% {
+    box-shadow: 0 -1em;
+    height: 2.6em; } }
+
+@keyframes load-bar-an {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 3em; }
+  40% {
+    box-shadow: 0 -1em;
+    height: 4em; } }
+
+.bar-anim, .loader .loader-inner .loader-bar, .loader .loader-inner .loader-bar:before, .loader .loader-inner .loader-bar:after {
+  background: #f6a821;
+  -webkit-animation: load-bar-an 1s infinite ease-in-out;
+  animation: load-bar-an 1s infinite ease-in-out;
+  width: 1em;
+  height: 1em; }
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(8, 9, 10, 0.8); }
+  .loader .loader-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .loader .loader-inner .loader-bar {
+      color: #f6a821;
+      text-indent: -9999em;
+      margin: auto auto;
+      position: relative;
+      font-size: 11px;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s; }
+      .loader .loader-inner .loader-bar:before, .loader .loader-inner .loader-bar:after {
+        content: '';
+        position: absolute;
+        top: 0; }
+      .loader .loader-inner .loader-bar:before {
+        left: -1.5em;
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s; }
+      .loader .loader-inner .loader-bar:after {
+        left: 1.5em; }
+
+nav.navbar {
+  padding-left: 0;
+  padding-right: 0; }
+  nav.navbar .navbar-brand {
+    padding-left: 20px; }
+    @media (max-width: 600px) {
+      nav.navbar .navbar-brand span {
+        display: none; } }
+  nav.navbar #menuList .nav-item .nav-link {
+    padding-left: 15px;
+    padding-right: 15px; }
+    nav.navbar #menuList .nav-item .nav-link i {
+      margin-right: 8px;
+      font-size: 14px; }
+  nav.navbar .basemapGallery {
+    margin-left: 5px; }
+    nav.navbar .basemapGallery a {
+      height: 32px; }
+  nav.navbar .dropdown-menu {
+    border-radius: 0; }
+    nav.navbar .dropdown-menu i {
+      font-size: 12px;
+      margin-right: 5px; }
+  @media (max-width: 991px) {
+    nav.navbar #rightMenu {
+      flex-direction: row;
+      position: absolute;
+      right: 54px;
+      top: 8px; } }
+  @media (max-width: 600px) {
+    nav.navbar #rightMenu {
+      left: 50px; } }
+  @media (max-width: 600px) {
+    nav.navbar #rightMenu .nav-item {
+      flex-grow: 1; } }
+  nav.navbar #rightMenu .nav-item .nav-link {
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative; }
+    @media (max-width: 600px) {
+      nav.navbar #rightMenu .nav-item .nav-link {
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: center; } }
+    nav.navbar #rightMenu .nav-item .nav-link .badge {
+      position: absolute;
+      top: -3px;
+      right: 0px; }
+      @media (max-width: 600px) {
+        nav.navbar #rightMenu .nav-item .nav-link .badge {
+          right: auto; } }
+  nav.navbar #rightMenu .dropdown-menu {
+    font-size: 14px;
+    right: 0;
+    left: auto; }
+    @media (max-width: 991px) {
+      nav.navbar #rightMenu .dropdown-menu {
+        position: absolute;
+        right: 0;
+        left: initial; } }
+    @media (max-width: 600px) {
+      nav.navbar #rightMenu .dropdown-menu {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 50px;
+        z-index: 9999;
+        max-height: calc(100% - 56px);
+        overflow: auto;
+        width: 100%; } }
+    nav.navbar #rightMenu .dropdown-menu.notification-panel {
+      width: 300px;
+      padding: 0; }
+      @media (max-width: 600px) {
+        nav.navbar #rightMenu .dropdown-menu.notification-panel {
+          width: 100%; } }
+      nav.navbar #rightMenu .dropdown-menu.notification-panel > div {
+        border-bottom: 1px solid #ececec; }
+        nav.navbar #rightMenu .dropdown-menu.notification-panel > div:last-child {
+          border-bottom: none; }
+      nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-header {
+        padding: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #8ca6bf; }
+      nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul {
+        padding-left: 0;
+        list-style: none; }
+        nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li {
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid #ececec;
+          padding: 5px 0;
+          cursor: pointer; }
+          nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li:last-child {
+            border-bottom: none; }
+          nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li:hover {
+            background-color: #f7f7f7; }
+          nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-icon {
+            font-size: 16px;
+            width: 50px;
+            text-align: center; }
+            nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-icon i {
+              padding: 6px;
+              border-radius: 50%;
+              font-size: 14px; }
+          nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-content {
+            flex-grow: 1;
+            padding-right: 10px;
+            width: calc(100% - 50px); }
+            nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-content .notif-title {
+              font-weight: 700;
+              color: #42678c;
+              font-size: 12px; }
+            nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-content .notif-details {
+              font-size: 12px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: #4c6884; }
+            nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-content .notif-date {
+              font-size: 11px;
+              color: #9dacbb; }
+      nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-footer {
+        padding: 10px;
+        text-align: center;
+        text-decoration: none; }
+    nav.navbar #rightMenu .dropdown-menu.user-panel {
+      width: 200px; }
+      @media (max-width: 600px) {
+        nav.navbar #rightMenu .dropdown-menu.user-panel {
+          width: 100%; } }
+      nav.navbar #rightMenu .dropdown-menu.user-panel .user-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        nav.navbar #rightMenu .dropdown-menu.user-panel .user-profile .img-user {
+          width: 50px; }
+          nav.navbar #rightMenu .dropdown-menu.user-panel .user-profile .img-user .img-container {
+            width: 25px;
+            height: 25px;
+            margin: auto; }
+            nav.navbar #rightMenu .dropdown-menu.user-panel .user-profile .img-user .img-container img {
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%; }
+        nav.navbar #rightMenu .dropdown-menu.user-panel .user-profile .user-details {
+          width: calc(100% - 50px); }
+          nav.navbar #rightMenu .dropdown-menu.user-panel .user-profile .user-details .user-name {
+            font-weight: 500;
+            color: #25425f;
+            line-height: 1; }
+          nav.navbar #rightMenu .dropdown-menu.user-panel .user-profile .user-details .user-role {
+            font-size: 11px;
+            color: #abb3bb; }
+    @media (max-width: 600px) {
+      nav.navbar #rightMenu .dropdown-menu.search-Container {
+        overflow: visible; } }
+    @media (max-width: 600px) {
+      nav.navbar #rightMenu .dropdown-menu.search-Container .searchGeo .esri-search {
+        width: 100%; } }
+  nav.navbar .navbar-toggler {
+    margin-right: 5px;
+    padding: .1rem .50rem; }
+
+.rightToLeft nav.navbar {
+  flex-direction: row-reverse; }
+  .rightToLeft nav.navbar .navbar-brand {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center; }
+    .rightToLeft nav.navbar .navbar-brand i {
+      margin-left: 10px; }
+  .rightToLeft nav.navbar .navbar-toggler {
+    margin-right: 0;
+    margin-left: 5px;
+    padding: .25rem .75rem; }
+  @media (min-width: 992px) {
+    .rightToLeft nav.navbar #menuList {
+      flex-direction: row-reverse; } }
+  .rightToLeft nav.navbar #menuList .dropdown-menu {
+    right: 0;
+    left: auto; }
+  @media (max-width: 991px) {
+    .rightToLeft nav.navbar #menuList .nav-item {
+      text-align: right; } }
+  .rightToLeft nav.navbar #rightMenu {
+    flex-direction: row-reverse; }
+    @media (max-width: 991px) {
+      .rightToLeft nav.navbar #rightMenu {
+        left: 54px; } }
+    @media (max-width: 991px) and (min-width: 601px) {
+      .rightToLeft nav.navbar #rightMenu {
+        right: auto; } }
+    .rightToLeft nav.navbar #rightMenu .dropdown-menu {
+      left: 0;
+      right: auto; }
+  .rightToLeft nav.navbar .dropdown-menu {
+    text-align: right; }
+    .rightToLeft nav.navbar .dropdown-menu.notification-panel ul li,
+    .rightToLeft nav.navbar .dropdown-menu .user-profile,
+    .rightToLeft nav.navbar .dropdown-menu .dropdown-item {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center; }
+    .rightToLeft nav.navbar .dropdown-menu .dropdown-item i {
+      margin-left: 5px; }
+    .rightToLeft nav.navbar .dropdown-menu .notif-content {
+      padding-left: 10px;
+      padding-right: 0; }
+    .rightToLeft nav.navbar .dropdown-menu .esri-search__input {
+      text-align: right; }
+
+aside.sideBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  width: 300px;
+  transition: right .5s;
+  height: 100%;
+  box-shadow: -1px 1px 4px rgba(51, 54, 63, 0.3);
+  z-index: 100; }
+  @media (max-width: 400px) {
+    aside.sideBar {
+      width: 100%; } }
+  aside.sideBar.hidden {
+    right: -300px; }
+    @media (max-width: 400px) {
+      aside.sideBar.hidden {
+        right: -100%; } }
+  aside.sideBar .nav-tabs .nav-link {
+    border-radius: 0; }
+  aside.sideBar .tab-content {
+    height: calc(100% - 42px);
+    overflow: auto; }
+    aside.sideBar .tab-content #guide li {
+      font-size: 14px;
+      margin-bottom: 5px; }
+    aside.sideBar .tab-content .tab-content-title {
+      font-size: .9rem;
+      padding: 10px;
+      border-bottom: 1px solid #f8f9fa;
+      margin-bottom: 5px; }
+    aside.sideBar .tab-content .legend {
+      padding: 10px;
+      font-size: 14px; }
+    aside.sideBar .tab-content .esri-coordinate-conversion {
+      width: 100%; }
+
+.rightToLeft aside.sideBar {
+  right: auto;
+  left: 0;
+  transition: left .5s; }
+  .rightToLeft aside.sideBar.hidden {
+    left: -300px;
+    right: auto; }
+    @media (max-width: 400px) {
+      .rightToLeft aside.sideBar.hidden {
+        left: -100%;
+        right: auto; } }
+  .rightToLeft aside.sideBar .tab-content-title {
+    text-align: right; }
+
+.widgetContainer {
+  background: #fbfbfb;
+  border: 1px solid #5d6369;
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  width: 400px;
+  height: 400px;
+  min-width: 300px;
+  min-height: 300px;
+  border-top: none;
+  display: none;
+  border-top: 1px solid #5d6369; }
+  @media (max-width: 767px) {
+    .widgetContainer {
+      top: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0;
+      min-width: 0; } }
+  .widgetContainer .widgetHeader {
+    background: #343a40;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    cursor: move; }
+    .widgetContainer .widgetHeader .widgetTitle {
+      color: #e2e2e2;
+      flex-grow: 1;
+      padding: 0 10px;
+      align-items: center;
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: inline-block; }
+      .widgetContainer .widgetHeader .widgetTitle div {
+        display: inline-block; }
+      .widgetContainer .widgetHeader .widgetTitle i {
+        margin-right: 10px; }
+    .widgetContainer .widgetHeader a {
+      color: #b7b7b7;
+      border-left: 1px solid;
+      border-color: #5d6369;
+      text-align: center;
+      font-size: 15px;
+      width: 50px;
+      line-height: 35px;
+      -webkit-transition: color 0.2s ease;
+      -moz-transition: color 0.2s ease;
+      -ms-transition: color 0.2s ease;
+      -o-transition: color 0.2s ease;
+      transition: color 0.2s ease; }
+      @media (max-width: 767px) {
+        .widgetContainer .widgetHeader a.widgetMaximize {
+          display: none; } }
+  .widgetContainer .widgetBody {
+    padding: 15px 0;
+    height: calc(100% - 35px);
+    overflow: auto; }
+  .widgetContainer.maximized {
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100% !important; }
+  .widgetContainer.minimized {
+    opacity: 0 !important;
+    left: 0 !important;
+    top: 100% !important;
+    height: 40px !important;
+    width: 40px !important;
+    min-height: 0px;
+    min-width: 0px;
+    transition: all .4s; }
+    .widgetContainer.minimized .widgetContent {
+      overflow: hidden; }
+
+.minimizedWidgets .minimizedWidget {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin: 2px;
+  background: #343a40;
+  color: #9a9da0;
+  cursor: pointer; }
+
+.mCSB_scrollTools {
+  width: 11px;
+  opacity: .2; }
+
+.mCSB_scrollTools .mCSB_draggerRail,
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 5px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0; }
+
+.mCSB_scrollTools {
+  width: 11px; }
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0px; }
+
+.rightToLeft .widgetContainer .widgetHeader {
+  flex-direction: row-reverse; }
+  .rightToLeft .widgetContainer .widgetHeader .widgetTitle {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: 5px; }
+    .rightToLeft .widgetContainer .widgetHeader .widgetTitle i {
+      margin-right: 0;
+      margin-left: 10px; }
+  .rightToLeft .widgetContainer .widgetHeader a {
+    border-right: 1px solid;
+    border-left: none; }
+
+.rightToLeft .widgetContainer .widgetBody input, .rightToLeft .widgetContainer .widgetBody .form-group {
+  text-align: right; }
+
+.modal-open .widgetContainer {
+  z-index: auto !important; }
+
+.chiller-theme nav.navbar {
+  background-color: #24262d !important; }
+  .chiller-theme nav.navbar .badge {
+    border: 2px solid #24262d; }
+  .chiller-theme nav.navbar #rightMenu .dropdown-menu.user-panel .user-profile .user-details .user-name {
+    color: #343a40; }
+  .chiller-theme nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-header {
+    font-size: .9rem;
+    font-weight: 500;
+    color: #a1a5ab;
+    text-transform: uppercase; }
+  .chiller-theme nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-content .notif-title {
+    font-weight: 700;
+    color: #4d555d;
+    font-size: .75rem; }
+  .chiller-theme nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-content .notif-details {
+    color: #797f86;
+    font-size: .7rem; }
+  .chiller-theme nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-body ul li .notif-content .notif-date {
+    font-size: .66rem;
+    color: #b6bbbf; }
+  .chiller-theme nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-footer a {
+    color: #9a9da0;
+    text-decoration: none; }
+    .chiller-theme nav.navbar #rightMenu .dropdown-menu.notification-panel .notification-footer a:hover {
+      color: #33363f; }
+
+.chiller-theme .widgetContainer {
+  background: #33363f;
+  box-shadow: 1px 1px 5px #2a2d35;
+  border: 2px solid #2a2d35;
+  border-top: 1px solid #494b54; }
+  .chiller-theme .widgetContainer .widgetHeader {
+    background: #2a2d35;
+    border-bottom: 1px solid #494b54; }
+    .chiller-theme .widgetContainer .widgetHeader .widgetTitle {
+      color: #dadada; }
+    .chiller-theme .widgetContainer .widgetHeader a {
+      color: #828890;
+      border-color: #494b54; }
+      .chiller-theme .widgetContainer .widgetHeader a:hover {
+        color: #dadada; }
+  .chiller-theme .widgetContainer .widgetBody {
+    color: #949ba2;
+    font-size: .9rem; }
+    .chiller-theme .widgetContainer .widgetBody .form-control {
+      color: #828890;
+      background-color: #494b54;
+      border: 1px solid #494b54;
+      box-shadow: none; }
+      .chiller-theme .widgetContainer .widgetBody .form-control:focus {
+        color: #dadada;
+        background-color: #494b54;
+        border-color: #f3b90b; }
+      .chiller-theme .widgetContainer .widgetBody .form-control:disabled {
+        background: #3d3f48;
+        border-color: #3d3f48; }
+      .chiller-theme .widgetContainer .widgetBody .form-control.error {
+        border: 1px solid #d4513d;
+        color: #d4513d; }
+    .chiller-theme .widgetContainer .widgetBody .input-group-text {
+      color: #828890;
+      background-color: #494b54;
+      border: 1px solid #494b54; }
+    .chiller-theme .widgetContainer .widgetBody hr {
+      border-top: 1px solid #494b54; }
+    .chiller-theme .widgetContainer .widgetBody .select2-container--default .select2-selection--single {
+      background-color: #494b54;
+      border: 1px solid #494b54;
+      border-radius: 0px;
+      height: 38px; }
+      .chiller-theme .widgetContainer .widgetBody .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #828890;
+        line-height: 33px; }
+      .chiller-theme .widgetContainer .widgetBody .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 38px; }
+
+.chiller-theme .minimizedWidgets .minimizedWidget {
+  background: #2a2d35;
+  color: #828890;
+  box-shadow: 1px 1px 3px #1b1d1f; }
+  .chiller-theme .minimizedWidgets .minimizedWidget:hover {
+    color: #dadada; }
+
+.chiller-theme .sideBar .nav-tabs .nav-link {
+  color: #6a6c73;
+  border-color: #dee2e6;
+  border-left: none; }
+
+.chiller-theme .sideBar .nav-tabs .nav-item.show .nav-link,
+.chiller-theme .nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: #f9f9f9; }
+
+.chiller-theme .sideBar .nav-tabs .nav-link:focus,
+.chiller-theme .nav-tabs .nav-link:hover {
+  background-color: #f9f9f9; }
+
+.chiller-theme .select2-dropdown {
+  border-radius: 0px; }
+
+.chiller-theme .select2-results {
+  font-size: .8rem; }
+
+.chiller-theme .dataTables_wrapper {
+  padding: 0; }
+
+.chiller-theme .table.table-bordered {
+  border: 1px solid #494b54; }
+
+.chiller-theme .table.table-bordered td, .chiller-theme .table.table-bordered th {
+  border: 1px solid #494b54; }
+
+.chiller-theme .table.table-striped tr:nth-child(even) td {
+  background-color: #3b3e48; }
+
+.chiller-theme .table thead th {
+  border-bottom: none; }
+
+.chiller-theme .table td,
+.chiller-theme .table th {
+  border-top: 1px solid #494b54; }
+
+.chiller-theme .page-item .page-link {
+  color: #a4a6af;
+  background-color: #494b54;
+  border: none;
+  border-radius: 0; }
+
+.chiller-theme .page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #494b54; }
+
+.chiller-theme .page-item.active .page-link {
+  color: #fff;
+  background-color: #3b3e48; }
+
+.chiller-theme label.error {
+  color: #d4513d;
+  display: inline-block; }
+
+html {
+  font-size: initial; }
+
+body {
+  overflow: hidden;
+  background: #aad3df; }
+
+#main {
+  width: 100vw;
+  height: calc(100vh - 56px);
+  margin-top: 56px;
+  overflow: hidden;
+  position: relative; }
+  #main #mapDiv {
+    width: 100%;
+    height: 100%;
+    background: #aad3df; }
+
+#footer {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  bottom: 0;
+  left: 0; }
+
+.form-control,
+.btn,
+.input-group-text {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0; }
+
+.basemapContainer {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  max-height: calc(100% - 30px);
+  transition: right .5s; }
+  .basemapContainer.hidden {
+    right: -250px; }
+
+.calcite .esriBasemapGalleryNode {
+  float: none;
+  width: auto;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 6px 7px;
+  position: relative;
+  text-align: left; }
+  .calcite .esriBasemapGalleryNode.esriBasemapGallerySelectedNode {
+    background: #f1f1f1; }
+  .calcite .esriBasemapGalleryNode:hover {
+    background: #f8f9fa; }
+  .calcite .esriBasemapGalleryNode a {
+    flex-grow: 1;
+    position: relative;
+    z-index: 2; }
+    .calcite .esriBasemapGalleryNode a .esriBasemapGalleryThumbnail {
+      height: 64px;
+      width: 64px;
+      border: none;
+      margin: 1px;
+      -moz-box-shadow: 0 0 0 1px rgba(50, 50, 50, 0.25);
+      -webkit-box-shadow: 0 0 0 1px rgba(50, 50, 50, 0.25);
+      box-shadow: 0 0 0 1px rgba(50, 50, 50, 0.25); }
+      .calcite .esriBasemapGalleryNode a .esriBasemapGalleryThumbnail.esriBasemapGallerySelectedNode {
+        border: 2px solid #F99; }
+  .calcite .esriBasemapGalleryNode .esriBasemapGalleryLabelContainer {
+    background-color: transparent;
+    text-align: left;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    font-size: .7rem;
+    padding: 5px;
+    position: absolute;
+    left: 75px;
+    z-index: 1;
+    color: #6e6e6e; }
+
+.calcite .esriLayerList .esriContainer {
+  background-color: #f3f3f3;
+  color: initial;
+  border: none;
+  padding: 10px 0px; }
+  .calcite .esriLayerList .esriContainer .esriList {
+    list-style-type: none;
+    padding: 0; }
+  .calcite .esriLayerList .esriContainer .esriLayer .esriTitle {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.25);
+    transition: padding 250ms ease-in-out;
+    margin-bottom: 2px; }
+    .calcite .esriLayerList .esriContainer .esriLayer .esriTitle .esriTitleContainer {
+      border-top: none;
+      position: relative; }
+      .calcite .esriLayerList .esriContainer .esriLayer .esriTitle .esriTitleContainer .esriLabel {
+        font-family: 'CalciteWebCoreIcons' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 100%;
+        padding: 10px 5px 10px 35px;
+        margin-bottom: 0; }
+        .calcite .esriLayerList .esriContainer .esriLayer .esriTitle .esriTitleContainer .esriLabel:hover {
+          cursor: pointer; }
+        .calcite .esriLayerList .esriContainer .esriLayer .esriTitle .esriTitleContainer .esriLabel:before {
+          content: "\e68d";
+          font-family: 'CalciteWebCoreIcons';
+          position: absolute;
+          left: 10px; }
+      .calcite .esriLayerList .esriContainer .esriLayer .esriTitle .esriTitleContainer input[type="checkbox"] {
+        display: none; }
+        .calcite .esriLayerList .esriContainer .esriLayer .esriTitle .esriTitleContainer input[type="checkbox"]:checked ~ .esriLabel {
+          color: #888; }
+          .calcite .esriLayerList .esriContainer .esriLayer .esriTitle .esriTitleContainer input[type="checkbox"]:checked ~ .esriLabel:before {
+            content: "\e68e"; }
+      .calcite .esriLayerList .esriContainer .esriLayer .esriTitle .esriTitleContainer .esriToggleButton {
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        display: none; }
+
+.esriControlsBR {
+  display: none; }
+
+.calcite .searchContainer {
+  position: absolute;
+  right: 10px;
+  top: 20px; }
+  .calcite .searchContainer .arcgisSearch .showSources .sourcesMenu {
+    width: 100%; }
+  .calcite .searchContainer .arcgisSearch .searchGroup .searchInput {
+    font-size: 14px; }
+    @media (max-width: 400px) {
+      .calcite .searchContainer .arcgisSearch .searchGroup .searchInput {
+        width: 155px; } }
+  .calcite .searchContainer .arcgisSearch .searchBtn {
+    font-size: 1rem;
+    line-height: 32px; }
+    .calcite .searchContainer .arcgisSearch .searchBtn .searchIcon {
+      line-height: inherit; }
+  .calcite .searchContainer .arcgisSearch .searchClose,
+  .calcite .searchContainer .arcgisSearch .searchSpinner {
+    line-height: 32px; }
+
+.calcite .scalebar_bottom-right {
+  right: 160px; }
+
+.dataTables_wrapper > .row > div {
+  max-width: 100%; }
+
+input.error {
+  border: 1px solid #dc3c23;
+  color: #dc3c23; }
+
+label.error {
+  color: #ff3111;
+  display: inline-block; }
+
+.select2-container {
+  width: 100% !important; }

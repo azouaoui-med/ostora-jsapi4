@@ -1,0 +1,195 @@
+.chiller-theme {
+    // header 
+    $bg-nav: #24262d;
+    nav.navbar {
+        background-color: $bg-nav !important;
+        .badge {
+            border: 2px solid $bg-nav;
+        }
+        #rightMenu {
+            .dropdown-menu.user-panel .user-profile .user-details .user-name {
+                color: #343a40;
+            }
+            .dropdown-menu.notification-panel {
+                .notification-header {
+                    font-size: .9rem;
+                    font-weight: 500;
+                    color: #a1a5ab;
+                    text-transform: uppercase;
+                }
+                .notification-body ul li .notif-content {
+                    .notif-title {
+                        font-weight: 700;
+                        color: #4d555d;
+                        font-size: .75rem;
+                    }
+                    .notif-details {
+                        color: #797f86;
+                        font-size: .7rem;
+                    }
+                    .notif-date {
+                        font-size: .66rem;
+                        color: #b6bbbf;
+                    }
+                }
+                .notification-footer {
+                    a {
+                        color: #9a9da0;
+                        text-decoration: none;
+                        &:hover {
+                            color: #33363f;
+                        }
+                    }
+                }
+            }
+        }
+    } //Widget container------------------------
+    $widgetbg:#33363f;
+    $widgetHeaderbg:#2a2d35;
+    $inputbg:#494b54;
+    $inputbgdisabled:#3d3f48;
+    $inputcolor:#828890;
+    $inputcolorfocus :#dadada;
+    $inputbcolorfocus:#f3b90b;
+    .widgetContainer {
+        background: $widgetbg;
+        box-shadow: 1px 1px 5px $widgetHeaderbg;
+        border: 2px solid $widgetHeaderbg;
+        border-top: 1px solid $inputbg;
+        .widgetHeader {
+            background: $widgetHeaderbg;
+            border-bottom: 1px solid $inputbg;
+            .widgetTitle {
+                color: $inputcolorfocus;
+            }
+            a {
+                color: $inputcolor;
+                border-color: $inputbg;
+                &:hover {
+                    color: $inputcolorfocus;
+                }
+            }
+        }
+        .widgetBody {
+            color: #949ba2;
+            font-size: .9rem;
+            .form-control {
+                color: $inputcolor;
+                background-color: $inputbg;
+                border: 1px solid $inputbg;
+                box-shadow: none;
+                &:focus {
+                    color: $inputcolorfocus;
+                    background-color: $inputbg;
+                    border-color: $inputbcolorfocus;
+                }
+                &:disabled {
+                    background: $inputbgdisabled;
+                    border-color: $inputbgdisabled;
+                }
+                &.error {
+                    border: 1px solid #d4513d;
+                    color: #d4513d;
+                }
+            }
+            .input-group-text {
+                color: $inputcolor;
+                background-color: $inputbg;
+                border: 1px solid $inputbg;
+            }
+            hr {
+                border-top: 1px solid $inputbg;
+            }
+            .select2-container--default {
+                .select2-selection--single {
+                    background-color: $inputbg;
+                    border: 1px solid $inputbg;
+                    border-radius: 0px;
+                    height: 38px;
+                    .select2-selection__rendered {
+                        color: $inputcolor;
+                        line-height: 33px;
+                    }
+                    .select2-selection__arrow {
+                        height: 38px;
+                    }
+                }
+            }
+        }
+    }
+    .minimizedWidgets {
+        .minimizedWidget {
+            background: $widgetHeaderbg;
+            color: $inputcolor;
+            box-shadow: 1px 1px 3px #1b1d1f;
+            &:hover {
+                color: #dadada;
+            }
+        }
+    } //aside
+    .sideBar .nav-tabs .nav-link {
+        color: #6a6c73;
+        border-color: #dee2e6;
+        border-left: none;
+    }
+    .sideBar .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active {
+        color: #495057;
+        background-color: #f9f9f9;
+    }
+    .sideBar .nav-tabs .nav-link:focus,
+    .nav-tabs .nav-link:hover {
+        background-color: #f9f9f9;
+    }
+    .select2-dropdown {
+        border-radius: 0px;
+    }
+    .select2-results {
+        font-size: .8rem;
+    }
+    .dataTables_wrapper {
+        padding: 0;
+    }
+    .table {
+        &.table-bordered {
+            border: 1px solid #494b54;
+        }
+        &.table-bordered {
+            td, th {
+                border: 1px solid #494b54;
+            }
+        }
+        &.table-striped tr:nth-child(even) td {
+            background-color: #3b3e48;
+        }
+        thead th {
+            border-bottom: none;
+        }
+        td,
+        th {
+            border-top: 1px solid #494b54;
+        }
+    }
+    .page-item {
+        .page-link {
+            color: #a4a6af;
+            background-color: #494b54;
+            border: none;
+            border-radius: 0;
+        }
+        &.disabled .page-link {
+            color: #6c757d;
+            background-color: #494b54;
+        }
+        &.active .page-link {
+            color: #fff;
+            background-color: #3b3e48;
+        }
+    }
+    
+    
+    label.error {
+        color: #d4513d;
+        display: inline-block;
+    }
+}

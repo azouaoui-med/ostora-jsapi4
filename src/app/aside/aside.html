@@ -1,0 +1,47 @@
+<aside class="sideBar hidden">
+  <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="basemap-tab" data-toggle="tab" href="#basemapGallery" role="tab" aria-controls="basemapGallery"
+        aria-selected="true">
+        <i class="esri-icon-basemap"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#legend" role="tab" aria-controls="legend" aria-selected="false">
+        <i class="esri-icon-collection"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="layerList-tab" data-toggle="tab" href="#layerList" role="tab" aria-controls="layerList" aria-selected="false">
+        <i class="esri-icon-layers"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="ccWidget-tab" data-toggle="tab" href="#ccWidget" role="tab" aria-controls="ccWidget" aria-selected="false">
+        <i class="esri-icon-locate"></i>
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+
+
+    <!-- basemap gallery content-->
+    <div class="tab-pane fade show active" id="basemapGallery" role="tabpanel" aria-labelledby="home-tab">
+      <div class="tab-content-title"> ${i18n.basemapGallery} </div>
+    </div>
+    <!-- basemap gallery end-->
+    <!-- legend content-->
+    <div class="tab-pane fade" id="legend" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="tab-content-title">${i18n.legend}</div>
+    </div>
+    <!-- legend end-->
+    <div class="tab-pane fade" id="layerList" role="tabpanel" aria-labelledby="layerList-tab">
+      <div class="tab-content-title">${i18n.layerList}</div>
+    </div>
+    <div class="tab-pane fade" id="ccWidget" role="tabpanel" aria-labelledby="ccWidget-tab">
+      <div class="tab-content-title">${i18n.ccWidget}</div>
+     
+    </div>
+
+  </div>
+</aside>

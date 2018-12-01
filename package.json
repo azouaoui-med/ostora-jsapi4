@@ -1,0 +1,36 @@
+{
+  "name": "ostora-jsapi4",
+  "version": "1.0.0",
+  "description": "Ostora is a responsive template for building web mapping applications. This version is built with [Arcgis api for javascript 4.x](https://developers.arcgis.com/javascript/)",
+  "main": "index.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.5.0",
+    "@icon/themify-icons": "^1.0.1-alpha.1",
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "popper.js": "^1.14.6"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azouaoui-med/ostora-jsapi4.git"
+  },
+  "keywords": [],
+  "author": "Mohamed Azouaoui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azouaoui-med/ostora-jsapi4/issues"
+  },
+  "homepage": "https://github.com/azouaoui-med/ostora-jsapi4#readme"
+}
