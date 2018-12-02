@@ -10,13 +10,7 @@ You can find a version built with [Openlayers](http://openlayers.org/) in [here]
 
 ## Screenshots
 
-Desktop
-
-![Screenshot](https://user-images.githubusercontent.com/25878302/49329863-08fcad00-f586-11e8-9e2d-f6fa1f124d59.png)
-
-Mobile
-
-![Screenshot](https://user-images.githubusercontent.com/25878302/49329798-25e4b080-f585-11e8-91c4-94dd386bc7af.png)
+![Screenshot](https://user-images.githubusercontent.com/25878302/49343218-9105b400-f665-11e8-90a1-92c2b2d5749d.png)
 
 ## Quick start
 ```
