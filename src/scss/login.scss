@@ -1,0 +1,34 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #33363f;
+    .login-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 500px;
+        input {
+            color: #828890;
+            background-color: #494b54;
+            border: 1px solid #7f818a;
+            &:focus {
+                color: #dadada;
+                background-color: #494b54;
+                border-color: #f3b90b;
+                box-shadow: 0 0 0 0.2rem rgba(255, 235, 0, 0.1);
+            }
+        }
+        input,
+        button {
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            border-radius: 0;
+        }
+    }
+    hr {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}

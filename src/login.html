@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <!-- using local links -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+    <link href="css/login.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="login-container col-md-6 col-lg-4">
+            <div class="login-header">
+                <div class="form-group">
+                    <h2 class="text-center mb-4">
+                        <span class="text-warning">O</span><span class="text-light">stora</span>
+                    </h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="login-body">
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" name="user_name" placeholder="Username ...">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form-control-lg" name="pass_word" placeholder="Password ...">
+                    </div>
+                    <div class="form-group">
+
+                    </div>
+                    <div class="form-group">
+                        <a type="submit" class="btn btn-warning btn-block btn-lg" href="/">LOGIN</a>
+                        <!-- <button class="btn btn-warning btn-block btn-lg">LOGIN</button> -->
+                    </div>
+
+                    <input type="hidden" />
+                </form>
+            </div>
+            <div class="login-footer">
+                <div class="form-group text-center">
+                    <span class="text-light">© 2019 - <span class="text-warning">O</span>stora</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
