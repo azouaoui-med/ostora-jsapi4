@@ -1,6 +1,18 @@
 <div class="container">
   <div class="form-group">
     <p> ${i18n.drawTitle} </p>
-    <p>${i18n.comingSoon} </p>
   </div>
+  <div class="form-group">
+    <a id="btn_add_point" data-dojo-attach-point="btn_add_point" class="btn btn-outline-secondary" href="#">
+      <i class="esri-icon-map-pin"></i>
+    </a>
+    <a data-dojo-attach-point="btn_add_polyline" class="btn btn-outline-secondary" href="#">
+      <i class="esri-icon-polyline"></i>
+    </a>
+    <a data-dojo-attach-point="btn_add_polygon" class="btn btn-outline-secondary" href="#">
+      <i class="esri-icon-polygon"></i>
+    </a>
+    <a data-dojo-attach-point="btn_clear" class="btn btn-outline-secondary" href="#">${i18n.clear}</a>
+  </div>
+
 </div>
