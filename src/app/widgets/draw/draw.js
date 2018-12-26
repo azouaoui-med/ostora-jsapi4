@@ -19,7 +19,9 @@ define([
 
     ) {
 
-        let graphicsLayer = new GraphicsLayer(),
+        let graphicsLayer = new GraphicsLayer({
+            title: "Graphics"
+        }),
             sketchViewModel;
 
         return declare([_WidgetBase, _TemplatedMixin], {
@@ -51,8 +53,18 @@ define([
                     this.createSketch('polygon');
 
                 });
+                $(this.btn_add_circle).click((e) => {
+                    e.preventDefault();
+                    this.createSketch('circle');
 
-                $(this.btn_clear).click((e) => {
+                });
+                $(this.btn_add_rectangle).click((e) => {
+                    e.preventDefault();
+                    this.createSketch('rectangle');
+
+                });
+
+                $(this.btn_remove_all).click((e) => {
                     graphicsLayer.removeAll();
                 })
 

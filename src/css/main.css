@@ -372,6 +372,7 @@ aside.sideBar {
       .widgetContainer .widgetHeader .widgetTitle i {
         margin-right: 10px; }
     .widgetContainer .widgetHeader a {
+      text-decoration: none;
       color: #b7b7b7;
       border-left: 1px solid;
       border-color: #5d6369;
@@ -452,7 +453,8 @@ aside.sideBar {
     border-right: 1px solid;
     border-left: none; }
 
-.rightToLeft .widgetContainer .widgetBody input, .rightToLeft .widgetContainer .widgetBody .form-group {
+.rightToLeft .widgetContainer .widgetBody input,
+.rightToLeft .widgetContainer .widgetBody .form-group {
   text-align: right; }
 
 .modal-open .widgetContainer {

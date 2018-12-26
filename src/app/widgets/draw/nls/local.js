@@ -1,7 +1,6 @@
 define({
     root: {
-        drawTitle:"Draw Example",
-        clear:"Remove graphics"
+        drawTitle:"Draw Example"
     },
     "ar": true
 });

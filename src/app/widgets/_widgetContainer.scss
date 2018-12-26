@@ -11,6 +11,7 @@
     border-top: none;
     display: none;
     border-top: 1px solid #5d6369;
+
     @media (max-width: 767px) {
         top: 0 !important;
         bottom: 0 !important;
@@ -21,12 +22,14 @@
         min-height: 0;
         min-width: 0;
     }
+
     .widgetHeader {
         background: #343a40;
         display: flex;
         align-items: center;
         height: 35px;
         cursor: move;
+
         .widgetTitle {
             color: #e2e2e2;
             flex-grow: 1;
@@ -37,14 +40,18 @@
             text-overflow: ellipsis;
             overflow: hidden;
             display: inline-block;
+
             div {
                 display: inline-block;
             }
+
             i {
                 margin-right: 10px;
             }
         }
+
         a {
+            text-decoration: none;
             color: #b7b7b7;
             border-left: 1px solid;
             border-color: #5d6369;
@@ -53,6 +60,7 @@
             width: 50px;
             line-height: 35px;
             @include transition(color .2s ease);
+
             &.widgetMaximize {
                 @media (max-width: 767px) {
                     display: none;
@@ -60,11 +68,13 @@
             }
         }
     }
+
     .widgetBody {
         padding: 15px 0;
         height: calc(100% - 35px);
         overflow: auto;
     }
+
     &.maximized {
         top: 0 !important;
         bottom: 0 !important;
@@ -73,6 +83,7 @@
         width: 100% !important;
         height: 100% !important;
     }
+
     &.minimized {
         opacity: 0 !important;
         left: 0 !important;
@@ -82,6 +93,7 @@
         min-height: 0px;
         min-width: 0px;
         transition: all .4s;
+
         .widgetContent {
             overflow: hidden;
         }
@@ -127,22 +139,28 @@
     .widgetContainer {
         .widgetHeader {
             flex-direction: row-reverse;
+
             .widgetTitle {
                 display: flex;
                 flex-direction: row-reverse;
                 margin-left: 5px;
+
                 i {
                     margin-right: 0;
                     margin-left: 10px;
                 }
             }
+
             a {
                 border-right: 1px solid;
                 border-left: none;
             }
         }
-        .widgetBody{
-            input, .form-group{
+
+        .widgetBody {
+
+            input,
+            .form-group {
                 text-align: right;
             }
         }
@@ -152,5 +170,5 @@
 
 
 .modal-open .widgetContainer {
-	z-index:auto!important;
+    z-index: auto !important;
 }
