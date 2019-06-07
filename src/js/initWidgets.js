@@ -82,43 +82,42 @@ define([
 
         },
         createWidget: function (mapView, config, menu) {
-
-            require([config.path], (Widget) => {
-
-                //create an instance of widgetcontainer for each widget and append the widget in it
-                let widgetContainerCons = new widgetContainer();
+            let widgetContainerCons = new widgetContainer();
+            
+            // THIS WILL CHARGE ALL ELEMENTS OF WIDGET ON HEADER TAP (HTML/JS) LAZY LOADING ADDED BY KALIFORNIUM
+            menu.click(e => {
+              e.preventDefault();
+              require([config.path], Widget => {
                 
-                $(widgetContainerCons.domNode).find('.widgetTitle .widgetIcon')[0].innerHTML = config.icon;
-                $(widgetContainerCons.domNode).find('.widgetTitle .widgetText')[0].innerHTML = config.title;
-
-                let widgetCons = new Widget();
-                let widgetNode = $(widgetCons.domNode);
-
-                $(widgetContainerCons.domNode).find('.widgetBody').append(widgetNode);
-
-                $('#main').append($(widgetContainerCons.domNode));
-
-                // attach a click event on the menu to display the widget
-                this.setMenuClick(menu, widgetContainerCons);
-
-                widgetCons.mapView = mapView; //this is added so the mapView can be accessed in the widget
-                widgetCons.startup();
-                widgetContainerCons.startup();
-
-            });
-        },
-        setMenuClick: (menu, widgetContainerCons) => {
-            menu.click(function (e) {
-                e.preventDefault();
+                if (!config.isCreated) {
+                  
+                  $(widgetContainerCons.domNode).find(".widgetTitle .widgetIcon")[0].innerHTML = config.icon;
+                  $(widgetContainerCons.domNode).find(".widgetTitle .widgetText")[0].innerHTML = config.title;
+      
+                  let widgetCons = new Widget();
+                  let widgetNode = $(widgetCons.domNode);
+      
+                  $(widgetContainerCons.domNode)
+                    .find(".widgetBody")
+                    .append(widgetNode);
+                  $("#main").append($(widgetContainerCons.domNode));
+                  widgetCons.mapView = mapView; //this is added so the mapView can be accessed in the widget
+                  widgetCons.startup();
+                  widgetContainerCons.startup();
+                  config.isCreated = true;
+                }
+      
                 $(widgetContainerCons.domNode).show();
                 if (widgetContainerCons.minimizedWidget) {
-                    widgetContainerCons.restoreWidget();
+                  widgetContainerCons.restoreWidget();
+
                 }
                 //bring the widget to front clicked on its menu
                 $('.widgetContainer').css('z-index', 40);
                 $(widgetContainerCons.domNode).css('z-index', 50);
+              });
             });
-        }
+          }
     }
 
 
