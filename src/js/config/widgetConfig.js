@@ -12,7 +12,8 @@ define([
 				widget: {
 					title: i18n.Example,
 					icon: '<i class="fa fa-clone"></i>',
-					path: 'app/widgets/example/example'
+					path: 'app/widgets/example/example',
+					lazyLoad:true
 				}
 			},
 			//dropdown menu
@@ -26,7 +27,8 @@ define([
 					widget: {
 						title: i18n.drawTitle,
 						icon: '<i class="fas fa-pencil-alt"></i>',
-						path: 'app/widgets/draw/draw'
+						path: 'app/widgets/draw/draw',
+						lazyLoad:false
 					}
 				}]
 			}

@@ -49,7 +49,8 @@ define([
           "</a>"
       }).appendTo("ul#menuList");
 
-      this.setMenuClick(menu, menuConfig.widget, mapView);
+      this.setMenuClick(mapView, menuConfig.widget, menu);
+      //this.createWidget(mapView, menuConfig.widget, menu);
     },
     dropdownMenuWidget: function(menuConfig, widgetContainer, mapView) {
       // In case of dropdown menu we need to create a list and add links to widgets
@@ -75,55 +76,54 @@ define([
           html: submenu.icon + submenu.title
         }).appendTo(dropdownMenu);
 
-        this.setMenuClick(menu, submenu.widget, mapView);
+        this.createWidget(mapView, submenu.widget, menu);
       });
     },
-    createWidget(mapView, config, widgetContainerCons) {
-      if (!config.isCreated)
-        require([config.path], Widget => {
-          $(widgetContainerCons.domNode).find(
-            ".widgetTitle .widgetIcon"
-          )[0].innerHTML = config.icon;
-          $(widgetContainerCons.domNode).find(
-            ".widgetTitle .widgetText"
-          )[0].innerHTML = config.title;
+    createWidget: function(mapView, config, menu) {
+      require([config.path], Widget => {
+        //create an instance of widgetcontainer for each widget and append the widget in it
+        let widgetContainerCons = new widgetContainer();
 
-          let widgetCons = new Widget();
-          let widgetNode = $(widgetCons.domNode);
+        $(widgetContainerCons.domNode).find(
+          ".widgetTitle .widgetIcon"
+        )[0].innerHTML = config.icon;
+        $(widgetContainerCons.domNode).find(
+          ".widgetTitle .widgetText"
+        )[0].innerHTML = config.title;
 
-          $(widgetContainerCons.domNode)
-            .find(".widgetBody")
-            .append(widgetNode);
+        let widgetCons = new Widget();
+        let widgetNode = $(widgetCons.domNode);
 
-          $("#main").append($(widgetContainerCons.domNode));
+        $(widgetContainerCons.domNode)
+          .find(".widgetBody")
+          .append(widgetNode);
 
-          widgetCons.mapView = mapView; //this is added so the mapView can be accessed in the widget
-          widgetCons.startup();
-          widgetContainerCons.startup();
+        $("#main").append($(widgetContainerCons.domNode));
 
-          config.isCreated = true;
+        // attach a click event on the menu to display the widget
+        this.setMenuClick(menu, widgetContainerCons);
+
+        widgetCons.mapView = mapView; //this is added so the mapView can be accessed in the widget
+        widgetCons.startup();
+        widgetContainerCons.startup();
+
+        return widgetContainerCons;
+      });
+    },
+    setMenuClick: (mapView, config, menu) => {
+      if (!config.lazyLoad) {
+        let widgetContainerCons = this.createWidget(mapView, config, menu);
+        menu.click(e => {
+          e.preventDefault();
+          $(this.widgetContainerCons.domNode).show();
+          if (this.widgetContainerCons.minimizedWidget) {
+            this.widgetContainerCons.restoreWidget();
+          }
+          //bring the widget to front clicked on its menu
+          $(".widgetContainer").css("z-index", 40);
+          $(this.widgetContainerCons.domNode).css("z-index", 50);
         });
-    },
-    setMenuClick(menu, config, mapView) {
-      //create an instance of widgetcontainer for each widget and append the widget in it
-      let widgetContainerCons = new widgetContainer();
-
-      if (!config.lazyLoad)
-        this.createWidget(mapView, config, widgetContainerCons);
-
-      menu.click(e => {
-        e.preventDefault();
-        if (config.lazyLoad)
-          this.createWidget(mapView, config, widgetContainerCons);
-
-        $(widgetContainerCons.domNode).css("display", "block");
-        if (widgetContainerCons.minimizedWidget) {
-          widgetContainerCons.restoreWidget();
-        }
-        //bring the widget to front clicked on its menu
-        $(".widgetContainer").css("z-index", 40);
-        $(widgetContainerCons.domNode).css("z-index", 50);
-      });
+      }
     }
   };
 });
