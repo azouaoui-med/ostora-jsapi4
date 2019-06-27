@@ -1,44 +1,42 @@
 define([
   "require",
   "js/config/widgetConfig",
-  "js/loader",
   "app/header/header",
-  "app/aside/aside",
-  "app/widgets/widgetContainer"
-], function(require, widgetConfig, loader, header, aside, widgetContainer) {
+  "app/widgets/widgetContainer",
+  "js/loader"
+], function (require, widgetConfig, header, widgetContainer, loader) {
+  /**
+   * This module is responsible for loading and initializing widgets and add them to the document
+   */
   return {
-    startup: function(mapView) {
-      //create an instance of header widget and add it's domNode (html code) to the documents in the #header element
-      this.createHeaderWidget(mapView);
+    startup(mapView) {
+      widgetConfig.getWidgetConfig().then(() => {
+        //create an instance of header widget and add it's domNode (html code) to the documents in the #header element
+        this.createHeaderWidget(mapView);
 
-      //create an instance of aside widget and add it's domNode (html code) to the documents in the #main element
-      this.createAsideWidget(mapView);
-
-      widgetConfig.menus.forEach(menu => {
-        if (menu.type == "simple") {
-          //case of widget with a simple menu
-          this.simpleMenuWidget(menu, widgetContainer, mapView);
-        } else if (menu.type == "dorpdown") {
-          //case of widget with a dropdown menu
-          this.dropdownMenuWidget(menu, widgetContainer, mapView);
-        }
+        widgetConfig.menus.forEach(menu => {
+          if (menu.type == "simple") {
+            //case of widget with a simple menu
+            this.simpleMenuWidget(menu, widgetContainer, mapView);
+          } else if (menu.type == "dropdown") {
+            //case of widget with a dropdown menu
+            this.dropdownMenuWidget(menu, widgetContainer, mapView);
+          }
+        });
       });
     },
-    createHeaderWidget: function(mapView) {
+    createHeaderWidget(mapView) {
+      /**
+       * create an instance of header widget and add it's domNode (html code) to the documents in the #header element
+       */
       let headerWidget = new header();
       headerWidget.mapView = mapView; //this is added so the mapView can be accessed in the widget
       $("#header").append($(headerWidget.domNode));
 
       headerWidget.startup();
     },
-    createAsideWidget: function(mapView) {
-      let asideWidget = new aside();
-      asideWidget.mapView = mapView; //this is added so the mapView can be accessed in the widget
-      $("#main").append($(asideWidget.domNode));
 
-      asideWidget.startup();
-    },
-    simpleMenuWidget: function(menuConfig, widgetContainer, mapView) {
+    simpleMenuWidget: function (menuConfig, widgetContainer, mapView) {
       // In case of simple menu we only create a link without dropdown
       var menu = $("<li/>", {
         class: "nav-item",
@@ -51,7 +49,7 @@ define([
 
       this.setMenuClick(menu, menuConfig.widget, mapView);
     },
-    dropdownMenuWidget: function(menuConfig, widgetContainer, mapView) {
+    dropdownMenuWidget: function (menuConfig, widgetContainer, mapView) {
       // In case of dropdown menu we need to create a list and add links to widgets
       var dropdown = $("<li/>", {
         class: "nav-item dropdown",
@@ -78,6 +76,7 @@ define([
         this.setMenuClick(menu, submenu.widget, mapView);
       });
     },
+
     createWidget(mapView, config, widgetContainerCons) {
       if (!config.isCreated)
         require([config.path], Widget => {
@@ -104,6 +103,7 @@ define([
           config.isCreated = true;
         });
     },
+
     setMenuClick(menu, config, mapView) {
       //create an instance of widgetcontainer for each widget and append the widget in it
       let widgetContainerCons = new widgetContainer();
@@ -113,6 +113,7 @@ define([
 
       menu.click(e => {
         e.preventDefault();
+        $(".widgetContainer").hide();
         if (config.lazyLoad)
           this.createWidget(mapView, config, widgetContainerCons);
 
